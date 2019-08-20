@@ -63,5 +63,5 @@
 
 #include "Actuator.h"
 
-extern ValueActuator alarm;
+extern ValueActuator alarmActuator;
 
