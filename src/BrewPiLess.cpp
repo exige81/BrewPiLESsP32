@@ -177,7 +177,7 @@ const char *nocache_list[]={
 		return "text/plain";
 	  }
 
-// GravityTracker gravityTracker;
+GravityTracker gravityTracker;
 
 AsyncWebServer *webServer;
 
