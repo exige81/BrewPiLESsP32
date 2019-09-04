@@ -108,7 +108,7 @@ void WiFiSetupClass::begin(WiFiMode mode, char const *ssid,const char *passwd)
 			WiFi.config(INADDR_NONE,INADDR_NONE,INADDR_NONE);
 		}
 		
-		WiFi.setAutoReconnect(true);
+		//WiFi.setAutoReconnect(true);
 		WiFi.begin();
 		
 		_time=millis();
@@ -167,9 +167,9 @@ String WiFiSetupClass::status(void){
 
 bool WiFiSetupClass::stayConnected(void)
 {
-	if(_apMode){
+	if(_mode == WIFI_AP || _mode == WIFI_AP_STA){
 		dnsServer->processNextRequest();
-		return true;
+		if(_mode == WIFI_AP) return true;
 	}
 	
 	if(_wifiState==WiFiStateChangeConnectPending){
